@@ -61,7 +61,7 @@ A estrutura do projeto está organizada da seguinte forma:
 ## Postman
 
 Segue uma collection no postman apotando para o servidor mock que executa os mesmos cenários implementados no restassured.
-
+[API Tests postman_collection.json](files%2FAPI%20Tests%20postman_collection.json)
 
 ## Relatório de execução dos testes  
 
