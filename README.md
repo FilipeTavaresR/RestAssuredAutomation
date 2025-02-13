@@ -106,7 +106,7 @@ scrape_configs:
     metrics_path: /metrics
 - Navegue até a pasta que baixou o prometheus e execute este comando: ./prometheus --config.file=prometheus.yml --web.enable-remote-write-receiver
 - Para executar o teste de performance Navegue até a pasta src/test/java/org/restassuredtests/performance e execute o comando: k6 run --out experimental-prometheus-rw performance-test.js
-- Importe um dashboard e utilize o json desse arquivo: 
+- Importe um dashboard e utilize o json desse arquivo: [Dashboard_Grafana.json](files%Dashboard_Grafana.json)
 - Se deu tudo certo você vai poder ver os dados após configurar um dashboard no grafana http://localhost:3000/.
 
 ![image](https://github.com/user-attachments/assets/5371798e-bdbf-4e00-9b22-945869c2f91c)
