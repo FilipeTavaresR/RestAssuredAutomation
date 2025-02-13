@@ -46,10 +46,11 @@ A estrutura do projeto está organizada da seguinte forma:
    ```bash
    git clone https://github.com/FilipeTavaresR/RestAssuredAutomation
 
-2. cd json-server
+2. No terminal rode os comandos a seguir:
+   cd caminhoDoProjeto/json-server
    npm install
 
-3. node server.js para iniciar o servidor mock
+3. para iniciar o servidor mock navuegue até a pasta json-server e rode o comando no terminal: node server.js 
 
 ## Testes Implementados
 
