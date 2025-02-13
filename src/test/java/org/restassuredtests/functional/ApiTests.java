@@ -2,7 +2,7 @@ package org.restassuredtests.functional;
 
 import io.restassured.http.ContentType;
 import org.restassuredtests.config.BaseTest;
-import org.restassuredtests.config.utils.PayloadUtils;
+import org.restassuredtests.utils.PayloadUtils;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;

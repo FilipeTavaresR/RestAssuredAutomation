@@ -1,4 +1,4 @@
-package org.restassuredtests.config.utils;
+package org.restassuredtests.utils;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
