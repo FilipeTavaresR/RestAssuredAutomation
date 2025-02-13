@@ -4,13 +4,13 @@ Este projeto apresenta um modelo de testes de API utilizando **RestAssured**, te
 
 ## 📌 Visão Geral
 
-Este relatório documenta os testes funcionais realizados na API utilizando **RestAssured** e **TestNG**. O objetivo é validar o correto funcionamento dos endpoints da API e garantir que os dados retornados estão de acordo com as expectativas.
+Este relatório documenta os testes funcionais e de performance realizados na API, utilizando **RestAssured** e **K6**, para validar o correto funcionamento dos endpoints e garantir que os dados retornados estejam de acordo com as expectativas.
 
-## Objetivo
+## 🎯 Objetivo
 
 O objetivo deste projeto é validar o funcionamento correto da API de usuários, cobrindo os seguintes cenários:
 
-- **GET** usuário com sucesso.
+`. **GET** usuário com sucesso.`
 - **POST** usuário com sucesso.
 - **POST** usuário faltando campo obrigatório.
 - **GET** simulando um erro no servidor com path inválido.
