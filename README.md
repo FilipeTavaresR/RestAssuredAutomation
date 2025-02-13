@@ -1,8 +1,8 @@
-# RestAssured API Tests + k6 Performance tests com Json-Server Mock
+# RestAssured API Tests + K6 Performance tests
 
-Este projeto é um modelo de testes de API utilizando **RestAssured** e um **mock server** com **Json-server** para simular as respostas com dados de usuários.
+Este projeto apresenta um modelo de testes de API utilizando **RestAssured**, testes de performance com **K6** e um mock server com **Json-server** para simular respostas com dados de usuários.
 
-📌 **Visão Geral**
+## 📌 Visão Geral
 
 Este relatório documenta os testes funcionais realizados na API utilizando **RestAssured** e **TestNG**. O objetivo é validar o correto funcionamento dos endpoints da API e garantir que os dados retornados estão de acordo com as expectativas.
 
