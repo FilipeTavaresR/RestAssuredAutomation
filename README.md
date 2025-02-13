@@ -1,87 +1,76 @@
+# RestAssured API Tests com Json-Server Mock
 
-📌 Visão Geral
+Este projeto é um modelo de testes de API utilizando **RestAssured** e um **mock server** com **Json-server** para simular as respostas com dados de usuários.
 
-Este relatório documenta os testes funcionais realizados na API utilizando RestAssured e TestNG. O objetivo é validar o correto funcionamento dos endpoints da API e garantir que os dados retornados estão de acordo com as expectativas.
+📌 **Visão Geral**
+
+Este relatório documenta os testes funcionais realizados na API utilizando **RestAssured** e **TestNG**. O objetivo é validar o correto funcionamento dos endpoints da API e garantir que os dados retornados estão de acordo com as expectativas.
 
 ## Objetivo
 
-O objetivo deste projeto é validar o funcionamento correto da api de usuãrios, cobrindo os seguintes cenários:
+O objetivo deste projeto é validar o funcionamento correto da API de usuários, cobrindo os seguintes cenários:
 
-- Get usuário com sucesso.
-- Post usuário com sucesso.
-- Post usuário faltando campo obrigatório.
-- Get simulando um erro no servidor com path inválido.
+- **GET** usuário com sucesso.
+- **POST** usuário com sucesso.
+- **POST** usuário faltando campo obrigatório.
+- **GET** simulando um erro no servidor com path inválido.
 
 ## Tecnologias Utilizadas
 
-- **Restassured**: Para automação de testes de API.
+- **RestAssured**: Para automação de testes de API.
 - **Json-server**: Para criar um servidor de API simulando as respostas para os cenários de testes.
+- **TestNG**: Para executar e organizar os testes.
 - **Fixtures**: Para armazenar dados de teste (massas de dados fixas).
 
 ## Estrutura do Projeto
 
 A estrutura do projeto está organizada da seguinte forma:
 
-```
-/cypress
-  /fixtures      # Dados de teste (massas de dados)
-  /e2e           # Testes end-to-end
-  /support       # Comandos e configurações auxiliares (se necessário)
-  /pages         # Classes para representar as páginas e suas interações 
-cypress.config.js # Configurações do Cypress
-```
-
 ### Principais Arquivos
 
 - **Fixtures**: Contém os dados utilizados nos testes, como informações de usuário válidas e inválidas.
-- **Pages**: Contém classes que representam as páginas do site e as interações com o formulário de cadastro.
-- **Testes (e2e)**: Contém os cenários de teste que validam o comportamento do formulário de cadastro.
+- **Tests**: Contém os cenários de teste que validam o comportamento da API.
+- **Mocks**: Contém a configuração do Json-server para simulação dos endpoints e dados.
 
 ## Como Rodar o Projeto
 
 ### Pré-requisitos
 
-- **Node.js** (versão >= 14.x.x)
-  
+- **Java 11+**
+- **Maven** (para dependências)
+- **Nodejs** (para instalar os pacotes do json-server)
+
 ### Passos
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/FilipeTavaresR/CypressDemoAutomation.git
-   ```
+   git clone https://github.com/FilipeTavaresR/RestAssuredAutomation
 
-2. Navegue até a pasta do projeto:
-   ```bash
-   cd caminho/CypressDemoAutomation
-   ```
-
-3. Instale as dependências:
-   ```bash
+2. cd json-server
    npm install
-   ```
 
-4. Para rodar os testes, execute:
-   ```bash
-   npx cypress open
-   ```
-   Isso abrirá a interface gráfica do Cypress, onde você pode selecionar e rodar os testes.
+3. node server.js para iniciar o servidor mock
 
 ## Testes Implementados
 
-1. **Should register successfully with valid data**: Valida o preenchimento completo e correto do formulário.
-2. **Should show error when fields are empty**: Valida se os campos obrigatórios geram mensagens de erro adequadas quando deixados em branco.
-3. **Should show error when an invalid email is entered**: Testa o comportamento ao inserir um email inválido.
-4. **should show error when a weak password is entered**: Testa senhas fracas.
-5. **Should show error when an invalid phone is entered**: Testa um número de telefone inválido.
-6. **Should show error for mismatched passwords**: Testa senhas que não coincidem com a confirmação.
+1. **GET usuário com sucesso**: Valida a recuperação de um usuário existente.
+2. **POST usuário com sucesso**: Valida o registro de um novo usuário.
+3. **POST usuário faltando campo obrigatório**: Testa a resposta da API ao tentar criar um usuário com dados incompletos.
+4. **GET com erro no servidor (path inválido)**: Valida o comportamento da API quando um caminho inválido é acessado.
+
+## Postman
+
+Segue uma collection no postman apotando para o servidor mock que executa os mesmos cenários implementados no restassured.
+
 
 ## Relatório de execução dos testes  
 
-![image](https://github.com/user-attachments/assets/629201d6-9cd6-4cdb-b871-154d004bfbe0)
+![image](https://github.com/user-attachments/assets/5371798e-bdbf-4e00-9b22-945869c2f91c)
+![image](https://github.com/user-attachments/assets/8e803977-f29e-46b4-869d-8b0e8b552599)
 
 ## Contribuições
 
-Você pode explorar este projeto e aprender sobre a implementação de testes end-to-end com Cypress.
+Sinta-se à vontade para explorar este projeto e aprender sobre a implementação de testes de API com **RestAssured** e **Json-server**.
 
 ## Licença
 
