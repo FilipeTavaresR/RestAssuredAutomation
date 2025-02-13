@@ -100,10 +100,11 @@ Uma collection do Postman está disponível para testar a API mock:
   
 ### 📊 Monitoramento com Grafana + Prometheus (Opcional)
 Caso deseje visualizar as métricas no Grafana:
-- Se desejar ter o dashboard no grafana é necessário instalar o prometheus, grafana e para coleta de dados de performance de hardware depende do SO, nesse projeto foi utilizado o windows_exporter.
-- https://grafana.com/grafana/download/8.2.3
-- https://prometheus.io/download/
-- https://github.com/prometheus-community/windows_exporter/releases
+1. Instale as ferramentas necessárias:
+   - [Grafana](https://grafana.com/grafana/download/8.2.3)
+   - [Prometheus](https://prometheus.io/download/)
+   - [Windows Exporter (caso esteja no Windows)](https://github.com/prometheus-community/windows_exporter/releases)
+
 - Adicione essa configuração no prometheus.yml: 
 scrape_configs:
   - job_name: "prometheus"
