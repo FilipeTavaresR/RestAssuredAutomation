@@ -94,10 +94,10 @@ Uma collection do Postman está disponível para testar a API mock:
 
 1. [Instale o k6](https://grafana.com/docs/k6/latest/set-up/install-k6/)
 2. Execute o teste:
-  ```bash
-  cd src/test/java/org/restassuredtests/performance 
-  k6 run performance-tests.js
-
+   ```bash
+   cd src/test/java/org/restassuredtests/performance 
+   k6 run performance-tests.js
+  
 ### 📊 Monitoramento com Grafana + Prometheus (Opcional)
 Caso deseje visualizar as métricas no Grafana:
 - Se desejar ter o dashboard no grafana é necessário instalar o prometheus, grafana e para coleta de dados de performance de hardware depende do SO, nesse projeto foi utilizado o windows_exporter.
