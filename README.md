@@ -1,4 +1,4 @@
-# RestAssured API Tests com Json-Server Mock
+# RestAssured API Tests + k6 Performance tests com Json-Server Mock
 
 Este projeto é um modelo de testes de API utilizando **RestAssured** e um **mock server** com **Json-server** para simular as respostas com dados de usuários.
 
@@ -30,7 +30,10 @@ A estrutura do projeto está organizada da seguinte forma:
 
 - **Fixtures**: Contém os dados utilizados nos testes, como informações de usuário válidas e inválidas.
 - **Tests**: Contém os cenários de teste que validam o comportamento da API.
-- **Mocks**: Contém a configuração do Json-server para simulação dos endpoints e dados.
+   - Performance tests: Testes de performance e stress da API mock
+   - Contract: Testes para validar o contrato da API.
+   - Funcional: Cenários de testes funcionais da API.        
+- **json-server**: Contém a configuração do Json-server para simulação dos endpoints e dados.
 
 ## Como Rodar o Projeto
 
@@ -40,7 +43,7 @@ A estrutura do projeto está organizada da seguinte forma:
 - **Maven** (para dependências)
 - **Nodejs** (para instalar os pacotes do json-server)
 
-### Passos
+### Como executar
 
 1. Clone este repositório:
    ```bash
@@ -64,7 +67,47 @@ A estrutura do projeto está organizada da seguinte forma:
 Segue uma collection no postman apotando para o servidor mock que executa os mesmos cenários implementados no restassured.
 [API Tests postman_collection.json](files%2FAPI%20Tests%20postman_collection.json)
 
-## Relatório de execução dos testes  
+## Postman
+
+## 🚀 **Testes de Performance com k6**
+
+### Objetivo
+
+- Realizar testes de carga e stress na API
+- Medir métricas-chave de performance:
+   - Latência (p95, p99)
+   - Taxa de requisições por segundo (RPS)
+   - Taxa de erros
+   - Uso de recursos durante testes
+
+### Tecnologias Adicionais
+
+- k6: Ferramenta open source para testes de carga
+- Grafana + Prometheus (Opcional): Para dashboard e monitoramento
+
+### Como executar
+
+- Instale o k6 https://grafana.com/docs/k6/latest/set-up/install-k6/ 
+- Navegue até a pasta src/test/java/org/restassuredtests/performance e execute o comando: k6 run performance-tests.js
+**Opcional**
+- Se desejar ter o dashboard no grafana é necessário instalar o prometheus, grafana e para coleta de dados de performance de hardware depende do SO, nesse projeto foi utilizado o windows_exporter.
+- https://grafana.com/grafana/download/8.2.3
+- https://prometheus.io/download/
+- https://github.com/prometheus-community/windows_exporter/releases
+- Adicione essa configuração no prometheus.yml: 
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+    # Esse job faz parde do windows_exporter, caso não estiver em Windows é necessário configurar de acordo com o SO.
+  - job_name: "windows"
+    static_configs:
+      - targets: ["localhost:9182"]
+    metrics_path: /metrics
+- Navegue até a pasta que baixou o prometheus e execute este comando: ./prometheus --config.file=prometheus.yml --web.enable-remote-write-receiver
+- Para executar o teste de performance Navegue até a pasta src/test/java/org/restassuredtests/performance e execute o comando: k6 run --out experimental-prometheus-rw performance-test.js
+- Importe um dashboard e utilize o json desse arquivo: 
+- Se deu tudo certo você vai poder ver os dados após configurar um dashboard no grafana http://localhost:3000/.
 
 ![image](https://github.com/user-attachments/assets/5371798e-bdbf-4e00-9b22-945869c2f91c)
 ![image](https://github.com/user-attachments/assets/8e803977-f29e-46b4-869d-8b0e8b552599)
