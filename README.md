@@ -75,9 +75,9 @@ Uma collection do Postman está disponível para testar a API mock:
 
 ## Postman
 
-## 🚀 **Testes de Performance com k6**
+## 🚀 Testes de Performance com k6
 
-### Objetivo
+### 🎯 Objetivos
 
 - Realizar testes de carga e stress na API
 - Medir métricas-chave de performance:
@@ -86,14 +86,13 @@ Uma collection do Postman está disponível para testar a API mock:
    - Taxa de erros
    - Uso de recursos durante testes
 
-### Tecnologias Adicionais
+### 🛠 Tecnologias Adicionais
 
-- k6: Ferramenta open source para testes de carga
-- Grafana + Prometheus (Opcional): Para dashboard e monitoramento
+- **Grafana + Prometheus** (Opcional): Para dashboard e monitoramento
 
-### Como executar
+### 🔹 Execução dos Testes de Performance
 
-- Instale o k6 https://grafana.com/docs/k6/latest/set-up/install-k6/ 
+- Instale o k6 [Instalar K6](https://grafana.com/docs/k6/latest/set-up/install-k6/)
 - Navegue até a pasta src/test/java/org/restassuredtests/performance e execute o comando: k6 run performance-tests.js
 **Opcional**
 - Se desejar ter o dashboard no grafana é necessário instalar o prometheus, grafana e para coleta de dados de performance de hardware depende do SO, nesse projeto foi utilizado o windows_exporter.
