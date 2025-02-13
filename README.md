@@ -104,23 +104,26 @@ Caso deseje visualizar as métricas no Grafana:
    - [Grafana](https://grafana.com/grafana/download/8.2.3)
    - [Prometheus](https://prometheus.io/download/)
    - [Windows Exporter (caso esteja no Windows)](https://github.com/prometheus-community/windows_exporter/releases)
+2. Adicione essa configuração no prometheus.yml:
+   ```bash
+   scrape_configs:
+     - job_name: "prometheus"
+       static_configs:
+         - targets: ["localhost:9090"]
+     - job_name: "windows"
+       static_configs:
+         - targets: ["localhost:9182"]
+       metrics_path: /metrics
+3. Inicie o Prometheus:
+   ```bash
+   ./prometheus --config.file=prometheus.yml --web.enable-remote-write-receiver
+4. Execute o teste de performance enviando os dados para o Prometheus:
+   ```bash
+   k6 run --out experimental-prometheus-rw performance-test.js
+5. No Grafana, importe um dashboard utilizando o seguinte JSON: [Dashboard_Grafana.json](files/Dashboard_Grafana.json)
+6. Acesse o Grafana no navegador: [http://localhost:3000/](http://localhost:3000/)
 
-- Adicione essa configuração no prometheus.yml: 
-scrape_configs:
-  - job_name: "prometheus"
-    static_configs:
-      - targets: ["localhost:9090"]
-**Esse job faz parde do windows_exporter, caso não estiver em Windows é necessário configurar de acordo com o SO.**
-  - job_name: "windows"
-    static_configs:
-      - targets: ["localhost:9182"]
-    metrics_path: /metrics
-- Navegue até a pasta que baixou o prometheus e execute este comando: ./prometheus --config.file=prometheus.yml --web.enable-remote-write-receiver
-- Para executar o teste de performance Navegue até a pasta src/test/java/org/restassuredtests/performance e execute o comando: k6 run --out experimental-prometheus-rw performance-test.js
-- Importe um dashboard e utilize o json desse arquivo: [Dashboard_Grafana.json](files/Dashboard_Grafana.json)
-- Se deu tudo certo você vai poder ver os dados no dashboard no grafana http://localhost:3000/ após executar o teste.
-
-## Relatório de execução dos testes  
+## 📊 Relatórios de Execução
 
 ![image](https://github.com/user-attachments/assets/5371798e-bdbf-4e00-9b22-945869c2f91c)
 ![image](https://github.com/user-attachments/assets/8e803977-f29e-46b4-869d-8b0e8b552599)
@@ -129,10 +132,10 @@ scrape_configs:
 ![image](https://github.com/user-attachments/assets/b017a8da-20e6-43bd-a4af-101a97b3439c)
 ![image](https://github.com/user-attachments/assets/0490bed7-f44c-4eea-9da3-c8f0761bd2b8)
 
-## Contribuições
+## 🤝 Contribuições
 
 Sinta-se à vontade para explorar este projeto e aprender sobre a implementação de testes de API com **RestAssured**, testes de performance com **k6** e mocks com **Json-server**.
 
-## Licença
+## 📜 Licença
 
 Este projeto não possui uma licença formal, mas é de código aberto para fins educacionais.
