@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "João Silva",
+      "username": "joaosilva",
+      "email": "joao.silva@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Maria Oliveira",
+      "username": "mariaoliveira",
+      "email": "maria.oliveira@example.com"
+    },
+    {
+      "id": "3",
+      "name": "Carlos Souza",
+      "username": "carlossouza",
+      "email": "carlos.souza@example.com"
+    },
+    {
+      "id": "4",
+      "name": "Ana Costa",
+      "username": "anacosta",
+      "email": "ana.costa@example.com"
+    },
+    {
+      "id": "5",
+      "name": "Pedro Santos",
+      "username": "pedrosantos",
+      "email": "pedro.santos@example.com"
+    },
+    {
+      "id": "8911",
+      "name": "Fernanda Lima",
+      "username": "fernandalima",
+      "email": "fernanda.lima@example.com"
+    },
+    {
+      "id": "4462",
+      "username": "fernandalima",
+      "email": "fernanda.lima@example.com"
+    },
+    {
+      "id": "4577",
+      "username": "fernandalima",
+      "email": "fernanda.lima@example.com"
+    },
+    {
+      "name": "Fernanda Lima",
+      "username": "fernandalima",
+      "email": "fernanda.lima@example.com",
+      "id": "iue-AnF"
+    },
+    {
+      "name": "Fernanda Lima",
+      "username": "fernandalima",
+      "email": "fernanda.lima@example.com",
+      "id": "VB-YKaJ"
+    },
+    {
+      "name": "Fernanda Lima",
+      "username": "fernandalima",
+      "email": "fernanda.lima@example.com",
+      "id": "BuAHXcb"
+    },
+    {
+      "name": "Fernanda Lima",
+      "username": "fernandalima",
+      "email": "fernanda.lima@example.com",
+      "id": "6GLV0X-"
+    },
+    {
+      "name": "Fernanda Lima",
+      "username": "fernandalima",
+      "email": "fernanda.lima@example.com",
+      "id": "jXepRpU"
+    }
+  ]
+}
