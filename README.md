@@ -52,22 +52,25 @@ A estrutura do projeto está organizada da seguinte forma:
    ```bash
    git clone https://github.com/FilipeTavaresR/RestAssuredAutomation
 
-2. No terminal rode os comandos a seguir:
+2. No terminal rode os comandos a seguir:  
+   ```bash
    cd caminhoDoProjeto/json-server
    npm install
 
-3. para iniciar o servidor mock navuegue até a pasta json-server e rode o comando no terminal: node server.js 
+3. Inicie o servidor mock:
+   ```bash
+   node server.js 
 
-## Testes Implementados
+## 🧪 Testes Implementados
 
-1. **GET usuário com sucesso**: Valida a recuperação de um usuário existente.
-2. **POST usuário com sucesso**: Valida o registro de um novo usuário.
-3. **POST usuário faltando campo obrigatório**: Testa a resposta da API ao tentar criar um usuário com dados incompletos.
+1. **GET usuário com sucesso**: Recuperação de um usuário existente.
+2. **POST usuário com sucesso**: Registro de um novo usuário.
+3. **POST usuário faltando campo obrigatório**: Validação da resposta da API para dados incompletos.
 4. **GET com erro no servidor (path inválido)**: Valida o comportamento da API quando um caminho inválido é acessado.
 
-## Postman
+## 🌐 Postman
 
-Segue uma collection no postman apotando para o servidor mock que executa os mesmos cenários implementados no restassured.
+Uma collection do Postman está disponível para testar a API mock:
 [API Tests postman_collection.json](files%2FAPI%20Tests%20postman_collection.json)
 
 ## Postman
