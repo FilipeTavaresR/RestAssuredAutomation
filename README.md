@@ -15,33 +15,36 @@ O objetivo deste projeto é validar o funcionamento correto da API de usuários,
 - **POST** usuário faltando campo obrigatório.
 - **GET** simulando um erro no servidor com path inválido.
 
-## Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
-- **RestAssured**: Para automação de testes de API.
-- **Json-server**: Para criar um servidor de API simulando as respostas para os cenários de testes.
-- **TestNG**: Para executar e organizar os testes.
-- **Fixtures**: Para armazenar dados de teste (massas de dados fixas).
+- **RestAssured:** Automação de testes de API.
+- **Json-server:** Mock de API para simulação dos cenários de teste.
+- **TestNG:** Organização e execução dos testes.
+- **Fixtures:** Armazenamento de dados de teste fixos.
+- **K6:** Testes de carga e performance.
+- **Grafana + Prometheus (Opcional):** Monitoramento e visualização de métricas de performance.
 
-## Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 A estrutura do projeto está organizada da seguinte forma:
 
-### Principais Arquivos
+### 📁 Principais Diretórios
 
-- **Fixtures**: Contém os dados utilizados nos testes, como informações de usuário válidas e inválidas.
-- **Tests**: Contém os cenários de teste que validam o comportamento da API.
-   - Performance tests: Testes de performance e stress da API mock
-   - Contract: Testes para validar o contrato da API.
-   - Funcional: Cenários de testes funcionais da API.        
-- **json-server**: Contém a configuração do Json-server para simulação dos endpoints e dados.
+- **Fixtures:** Contém os dados utilizados nos testes, como informações de usuário válidas e inválidas.
+- **Tests:** Cenários de teste para validar o comportamento da API.
+   - **Performance tests:** Testes de carga e stress na API mock.
+   - **Contract:** Testes para validar o contrato da API.
+   - **Funcional:** Cenários de testes funcionais.     
+- **json-server:** Configuração do Json-server para simulação dos endpoints.
+  
+## 🛠 Como Rodar o Projeto
 
-## Como Rodar o Projeto
-
-### Pré-requisitos
+### ✅ Pré-requisitos
 
 - **Java 11+**
 - **Maven** (para dependências)
-- **Nodejs** (para instalar os pacotes do json-server)
+- **Nodejs** (para instalação do json-server)
+- **K6** (para testes de performance)
 
 ### Como executar
 
