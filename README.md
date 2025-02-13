@@ -10,7 +10,7 @@ Este relatório documenta os testes funcionais e de performance realizados na AP
 
 O objetivo deste projeto é validar o funcionamento correto da API de usuários, cobrindo os seguintes cenários:
 
-`. **GET** usuário com sucesso.`
+. **GET** usuário com sucesso.
 - **POST** usuário com sucesso.
 - **POST** usuário faltando campo obrigatório.
 - **GET** simulando um erro no servidor com path inválido.
