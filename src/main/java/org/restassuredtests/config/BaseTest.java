@@ -16,7 +16,7 @@ public abstract class BaseTest {
     public static void preCondicao(){
         spec = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
-                .setBaseUri("http://localhost:3000")
+                .setBaseUri("http://localhost:3030")
                 .addFilter(new RequestLoggingFilter())
                 .addFilter(new ResponseLoggingFilter())
                 .build();
