@@ -49,34 +49,42 @@ A estrutura do projeto está organizada da seguinte forma:
 ### Como executar
 
 1. Clone este repositório:
+  
    ```bash
    git clone https://github.com/FilipeTavaresR/RestAssuredAutomation
-
-2. No terminal rode os comandos a seguir:  
+   ```
+  
+2. Instale as dependências do mock server:
+  
    ```bash
-   cd caminhoDoProjeto/json-server
+   cd json-server
    npm install
-
+   ```
+  
 3. Inicie o servidor mock:
+
    ```bash
    node server.js 
-
+   ```
+  
 ## 🧪 Testes Implementados
 
 1. **GET usuário com sucesso**: Recuperação de um usuário existente.
 2. **POST usuário com sucesso**: Registro de um novo usuário.
 3. **POST usuário faltando campo obrigatório**: Validação da resposta da API para dados incompletos.
 4. **GET com erro no servidor (path inválido)**: Valida o comportamento da API quando um caminho inválido é acessado.
+  
+## 📊 Testes de Contrato
 
+Os testes de contrato garantem que a API retorna respostas conforme o esperado, seguindo um schema predefinido. Este projeto utiliza **RestAssured** para validar as respostas contra um schema JSON.
+  
 ## 🌐 Postman
 
 Uma collection do Postman está disponível para testar a API mock:
 [API Tests postman_collection.json](files%2FAPI%20Tests%20postman_collection.json)
-
-## Postman
-
+  
 ## 🚀 Testes de Performance com k6
-
+  
 ### 🎯 Objetivos
 
 - Realizar testes de carga e stress na API
@@ -94,10 +102,12 @@ Uma collection do Postman está disponível para testar a API mock:
 
 1. [Instale o k6](https://grafana.com/docs/k6/latest/set-up/install-k6/)
 2. Execute o teste:
+  
    ```bash
    cd src/test/java/org/restassuredtests/performance 
    k6 run performance-tests.js
-  
+   ```
+    
 ### 📊 Monitoramento com Grafana + Prometheus (Opcional)
 Caso deseje visualizar as métricas no Grafana:
 1. Instale as ferramentas necessárias:
@@ -105,6 +115,7 @@ Caso deseje visualizar as métricas no Grafana:
    - [Prometheus](https://prometheus.io/download/)
    - [Windows Exporter (caso esteja no Windows)](https://github.com/prometheus-community/windows_exporter/releases)
 2. Adicione essa configuração no prometheus.yml:
+  
    ```bash
    scrape_configs:
      - job_name: "prometheus"
@@ -114,13 +125,22 @@ Caso deseje visualizar as métricas no Grafana:
        static_configs:
          - targets: ["localhost:9182"]
        metrics_path: /metrics
+   ```
+  
 3. Inicie o Prometheus:
+  
    ```bash
    ./prometheus --config.file=prometheus.yml --web.enable-remote-write-receiver
+   ```
+  
 4. Execute o teste de performance enviando os dados para o Prometheus:
+  
    ```bash
    k6 run --out experimental-prometheus-rw performance-test.js
+   ```
+     
 5. No Grafana, importe um dashboard utilizando o seguinte JSON: [Dashboard_Grafana.json](files/Dashboard_Grafana.json)
+  
 6. Acesse o Grafana no navegador: [http://localhost:3000/](http://localhost:3000/)
 
 ## 📊 Relatórios de Execução
